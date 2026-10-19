@@ -1,12 +1,22 @@
-.git/
+# Python
+__pycache__/
+*.py[cod]
 .venv/
 venv/
-__pycache__/
-*.pyc
+
+# Local databases
 *.sqlite3
-*.log
+
+# Environment configuration
 .env
 .env.*
 !.env.example
-media/
+
+# Generated files
+*.log
 staticfiles/
+media/
+
+# IDE and OS
+.idea/
+.DS_Store
