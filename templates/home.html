@@ -3,4 +3,14 @@
 {% block content %}
     <h2>Welcome to myapp</h2>
     <p>{{ message }}</p>
+
+    <h3>Announcements</h3>
+    {% for announcement in announcements %}
+        <article>
+            <h4>{{ announcement.title }}</h4>
+            <p>{{ announcement.message }}</p>
+        </article>
+    {% empty %}
+        <p>No announcements available.</p>
+    {% endfor %}
 {% endblock %}
