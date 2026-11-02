@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Announcement(models.Model):
     title = models.CharField(max_length=120)
     message = models.TextField()
