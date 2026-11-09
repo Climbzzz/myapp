@@ -4,13 +4,22 @@
     <h2>Welcome to myapp</h2>
     <p>{{ message }}</p>
 
-    <h3>Announcements</h3>
-    {% for announcement in announcements %}
-        <article>
-            <h4>{{ announcement.title }}</h4>
-            <p>{{ announcement.message }}</p>
-        </article>
-    {% empty %}
-        <p>No announcements available.</p>
-    {% endfor %}
+<h2>Announcements</h2>
+
+{% for announcement in announcements %}
+  <article>
+    <h3>{{ announcement.title }}</h3>
+    <p>{{ announcement.message }}</p>
+    <p>
+      <strong>Category:</strong>
+      {% if announcement.category %}
+        {{ announcement.category.name }}
+      {% else %}
+        Uncategorized
+      {% endif %}
+    </p>
+  </article>
+{% empty %}
+  <p>No announcements found.</p>
+{% endfor %}
 {% endblock %}
