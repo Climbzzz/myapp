@@ -26,3 +26,4 @@ Successfully displayed all announcements using:
 
 ```python
 Announcement.objects.all()
+```
