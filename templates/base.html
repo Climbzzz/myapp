@@ -6,8 +6,15 @@
     <title>{% block title %}myapp{% endblock %}</title>
 </head>
 <body>
-    <header><h1>DBAS 3200 — myapp</h1></header>
-    <main>{% block content %}{% endblock %}</main>
-    <footer><p>Dockerized Django + PostgreSQL</p></footer>
+    <header>
+        <h1>DBAS 3200 — myapp</h1>
+        <nav>
+            <a href="{% url 'announcement-list' %}">Announcements</a>
+            <a href="{% url 'announcement-create' %}">New announcement</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 </body>
 </html>
