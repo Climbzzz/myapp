@@ -14,3 +14,14 @@ urlpatterns = [
     path("<int:pk>/edit/", AnnouncementUpdateView.as_view(), name="announcement-update"),
     path("<int:pk>/delete/", AnnouncementDeleteView.as_view(), name="announcement-delete"),
 ]
+<<<<<<< HEAD
+=======
+
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("announcements/", include("core.urls")),
+]
+>>>>>>> refs/remotes/origin/main

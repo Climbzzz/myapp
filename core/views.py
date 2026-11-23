@@ -13,6 +13,37 @@ from .forms import AnnouncementForm
 from .models import Announcement
 
 
+<<<<<<< HEAD
+=======
+def home(request):
+    announcements = Announcement.objects.select_related("category").order_by(
+        "-created_at"
+    )
+    return render(
+        request,
+        "home.html",
+        {
+            "message": "Announcements and their categories",
+            "announcements": announcements,
+        },
+    )
+
+from django.db.models import ProtectedError
+from django.http import HttpResponse
+from django.urls import reverse_lazy
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
+
+from .forms import AnnouncementForm
+from .models import Announcement
+
+
+>>>>>>> refs/remotes/origin/main
 class AnnouncementListView(ListView):
     model = Announcement
     template_name = "announcements/list.html"

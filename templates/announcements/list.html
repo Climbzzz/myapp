@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 {% block title %}Announcements{% endblock %}
 {% block content %}
@@ -15,3 +16,22 @@
   <p>No announcements yet.</p>
 {% endfor %}
 {% endblock %}
+=======
+{% extends "base.html" %}
+{% block title %}Announcements{% endblock %}
+{% block content %}
+<h2>Announcements</h2>
+<p><a href="{% url 'announcement-create' %}">Create announcement</a></p>
+{% for announcement in announcements %}
+  <article>
+    <h3><a href="{% url 'announcement-detail' announcement.pk %}">{{ announcement.title }}</a></h3>
+    <p>Category: {{ announcement.category.name }}</p>
+    <p>{{ announcement.message|truncatewords:25 }}</p>
+    <a href="{% url 'announcement-update' announcement.pk %}">Edit</a>
+    <a href="{% url 'announcement-delete' announcement.pk %}">Delete</a>
+  </article>
+{% empty %}
+  <p>No announcements yet.</p>
+{% endfor %}
+{% endblock %}
+>>>>>>> refs/remotes/origin/main
